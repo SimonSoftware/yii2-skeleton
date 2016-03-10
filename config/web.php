@@ -24,6 +24,15 @@ $config = [
         ],
     ],
     'components' => [
+        'view' => [
+            'theme' => [
+                'basePath' => '@app/themes/inspinia',
+                'baseUrl' => '@web/themes/inspinia',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/inspinia',
+                ],
+            ],
+        ],
         'i18n' => [
             'translations' => [
                 'app*' => [
