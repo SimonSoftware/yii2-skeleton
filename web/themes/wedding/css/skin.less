@@ -1,0 +1,289 @@
+/*
+	========================================
+	DITINGGAL RABI WEDDING INVITATION THEME
+	========================================
+	
+	@author			: @_TemplateNinja
+	@version		: v1.3
+	@date-create	: 02/26/2013
+	@last-update	: 03/19/2015
+	@file-name		: skin.less
+
+*/
+
+
+/*
+	========================================
+	TABLE OF CONTENT
+	========================================
+	
+	[1. IMPORT SOURCE]
+	[2. GLOBAL STYLE]
+	[3. NAVBAR]
+	[4. HOME]
+	[5. ABOUT]
+	[6. CEREMONY]
+	[7. PHOTOS]
+	[8. STORY]
+	[9. COPYRIGHT]
+
+*/
+
+
+/*
+	==================
+	[1. IMPORT SOURCE]
+	==================
+*/
+@import "variables.less";
+
+
+/* 
+	==================
+	[2. GLOBAL STYLE]
+	==================
+*/
+@theme-color: @yellow;
+
+body{
+	.background(@bgcolor: #fff; @bgsize: initial);
+	scrollbar-face-color: @theme-color;
+}
+
+a{
+	color: @theme-color;
+}
+
+::-moz-selection { 
+	background-color: @theme-color; 
+}
+
+::-webkit-selection { 
+	background-color: @theme-color; 
+}
+
+::selection { 
+	background-color: @theme-color; 
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: @theme-color;
+} 
+.form-control{
+	&:focus{
+		color: @theme-color;
+	}
+}
+
+.btn{
+	&.btn-secondary{
+		&:hover,
+		&:focus{
+			.background(@bgcolor: lighten(@theme-color, 3%); @bgsize: initial; @bgposition: initial);
+			border: 1px solid darken(@theme-color, 10%);
+			color: #fff;
+			text-shadow: 0 -1px 0 #999;
+			.transition;
+		}
+	}
+}
+
+
+/*
+	==============
+	[3. NAVBAR]
+	==============
+*/
+.navbar-default{
+	.navbar-brand{
+		background-color: @theme-color;
+
+		&:hover,
+		&:focus{
+			background-color: @theme-color;
+		}
+	}
+
+	.navbar-nav{
+		> li > a{
+			&:hover{
+				color: @theme-color !important;
+			}
+		}
+
+		> .active > a{
+			&,
+			&:hover{
+				color: @theme-color !important;
+			}
+		}
+	}
+
+	.navbar-toggle{
+		.icon-bar{
+			background-color: @theme-color;
+		}
+	}
+}
+
+
+/*
+	============
+	[4. HOME]
+	============
+*/
+#home{
+	h2{
+		color: @theme-color;
+		.rgba(@theme-color, .35);
+		text-shadow: 8px 7px 0 @rgba;
+	}
+}
+
+
+/*
+	==============
+	[5. ABOUT]
+	==============
+*/
+.line{
+	background-color: @theme-color;
+
+	&::before,
+	&::after{
+		background-color: lighten(@theme-color, 10%);
+	}
+}
+
+
+/*
+	==============
+	[6. CEREMONY]
+	==============
+*/
+#ceremony{
+	h2{
+		color: @theme-color;
+		.rgba(@theme-color, .35);
+		text-shadow: 8px 7px 0 @rgba;
+	}
+}
+
+
+/*
+	==============
+	[7. PHOTOS]
+	==============
+*/
+#photos{
+	.photo-gallery{
+		background-color: lighten(@theme-color, 5%);
+	}
+
+	#wedding-photo{
+		.carousel-control{
+			&:hover{
+				background: @theme-color !important;
+			}
+		}
+	}
+}
+
+
+/*
+	================
+	[8. STORY]
+	================
+*/
+.content-avatar {
+	background: @theme-color;
+
+	&::after {
+		content: '';
+		border-top-color: @theme-color;
+	}
+
+}
+
+.content-item{
+	&::after{
+		.font(@family: 'FontAwesome'; @size: 18px; @height: 26px);
+		content: '\f15c';
+		.box-shadow(0 0 0 3px @theme-color);
+	}
+
+	h3{
+		color: @theme-color;
+
+		a{
+			color: @theme-color;
+		}
+	}
+
+	.odd{
+		background: @theme-color;
+		color: #fff;
+	}
+}
+
+.content{
+	&-quote{
+		blockquote{
+			background-color: @theme-color;
+		}
+
+		&::after{
+			.font-family(@family: 'FontAwesome');
+			content: '\f10e';
+			color: @theme-color !important;
+		}
+	}
+
+	&-text{
+		&::after{
+			.font-family(@family: 'FontAwesome');
+			content: '\f15c';
+			color: @theme-color !important;
+		}
+	}
+
+	&-photo{
+		&::after{
+			.font-family(@family: 'FontAwesome');
+			content: '\f03e';
+			color: @theme-color !important;
+		}
+	}
+
+	&-chat{
+		&::after{
+			.font-family(@family: 'FontAwesome');
+			content: '\f0e6';
+			color: @theme-color !important;
+		}
+	}
+
+	&-end{
+		.content-avatar{
+			&::after{
+				border-bottom-color: @theme-color;
+			}
+		}
+	}
+}
+
+
+/*
+	================
+	[9. COPYRIGHT]
+	================
+*/
+#copyright{
+	h2{
+		color: @theme-color;
+	}
+
+	.social-icon > li > a{
+		background-color: @theme-color;
+	}
+}

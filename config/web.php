@@ -24,6 +24,15 @@ $config = [
         ],
     ],
     'components' => [
+        'view' => [
+            'theme' => [
+                'basePath' => '@app/themes/wedding',
+                'baseUrl' => '@web/themes/wedding',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/wedding',
+                ],
+            ],
+        ],
         'i18n' => [
             'translations' => [
                 'app*' => [
