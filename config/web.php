@@ -15,12 +15,36 @@ $config = [
     'language' => 'it-IT',
     'sourceLanguage' => 'it-IT',
     'modules' => [
-        'user' => [
+     /*   'user' => [
             'class' => 'dektrium\user\Module',
             'admins' => ['admin']
         ],
         'rbac' => [
             'class' => 'dektrium\rbac\Module',
+        ],*/
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'as access' => [
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ]
+                ]
+            ],
+        ],
+        'redactor' => 'yii\redactor\RedactorModule',
+        'datecontrol' =>  [
+            'class' => '\kartik\datecontrol\Module',
+            'displaySettings' => [
+                \kartik\datecontrol\Module::FORMAT_DATE => 'php:d/m/Y',
+            ],
+            'saveSettings' => [
+                \kartik\datecontrol\Module::FORMAT_DATE => 'php:U', // saves as unix timestamp
+            ],
+            'displayTimezone' => 'Europe/Rome',
+            'saveTimezone' => 'Europe/Rome'
         ],
     ],
     'components' => [
@@ -41,6 +65,13 @@ $config = [
                 ],
             ],
         ],
+        'formatter' => [
+            'dateFormat' => 'dd/MM/yyyy',
+            'datetimeFormat' => 'dd/MM/yyyy HH:mm:ss',
+            'decimalSeparator' => ',',
+            'thousandSeparator' => '.',
+            'currencyCode' => 'EUR',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Kz6-uVzKuJX0gxVDAAoo6cVfsj6xj4Vq',
@@ -48,10 +79,10 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-      /*  'user' => [
+        'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
-        ], */
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

@@ -54,6 +54,8 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        \Yii::$app->view->theme->pathMap = ['@app/views' => '@app/views'];
+
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
